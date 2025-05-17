@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class OnebardingOneDesc extends StatelessWidget {
-  const OnebardingOneDesc({super.key, required this.title});
+class OnBoardingTitle extends StatelessWidget {
+  const OnBoardingTitle({super.key, required this.title});
   final String title;
 
   @override

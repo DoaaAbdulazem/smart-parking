@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 
-class OneBoardingTwoImage extends StatelessWidget {
-  const OneBoardingTwoImage({super.key, required this.imagepath});
-  final String imagepath;
+class OneBoardingImage extends StatelessWidget {
+  const OneBoardingImage({super.key, required this.imagePath});
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {
     return Image.asset(
-      imagepath,
+      imagePath,
+
       width: 350,
       height: 350,
       alignment: Alignment.center,
