@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/auth/accountscreen/login.dart';
+import 'package:my_project/auth/screen/login.dart';
 import 'package:my_project/on_boarding/widget/custombuttom.dart';
 import 'package:my_project/on_boarding/widget/dot.dart';
 import 'package:my_project/on_boarding/widget/dots.dart';
