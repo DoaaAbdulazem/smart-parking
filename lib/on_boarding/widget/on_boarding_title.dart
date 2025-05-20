@@ -1,14 +1,36 @@
 import 'package:flutter/material.dart';
 
 class OnBoardingTitle extends StatelessWidget {
-  const OnBoardingTitle({super.key, required this.title});
+  const OnBoardingTitle({
+    super.key,
+    required this.title,
+    required this.subtitle,
+  });
   final String title;
+  final String subtitle;
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      title,
-      style: TextStyle(color: Color(0xfffecb10), fontSize: 20),
+    return Text.rich(
+      TextSpan(
+        text: title,
+        style: TextStyle(
+          color: Color.fromARGB(255, 0, 0, 0),
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+        ),
+        children: [
+          TextSpan(
+            text: "\n$subtitle",
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+              fontWeight: FontWeight.normal,
+            ),
+          ),
+        ],
+      ),
+
       textAlign: TextAlign.center,
     );
   }

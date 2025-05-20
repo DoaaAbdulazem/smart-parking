@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_project/auth/screen/login.dart';
-import 'package:my_project/on_boarding/widget/custombuttom.dart';
+import 'package:my_project/on_boarding/widget/custom_button.dart';
 import 'package:my_project/on_boarding/widget/dot.dart';
 import 'package:my_project/on_boarding/widget/dots.dart';
 import 'package:my_project/on_boarding/widget/on_boarding_image.dart';
@@ -19,19 +19,27 @@ class OneBoardingScreenTwo extends StatelessWidget {
             OneBoardingImage(imagePath: "assets/images/photo2.jpg"),
             SizedBox(height: 30),
             OnBoardingTitle(
-              title: "Search nearby private parking and reserve your spot.",
+              title: "Search nearby private parking",
+              subtitle: " and reserve your spot.",
             ),
             SizedBox(height: 30),
             Dots(list: [Dot(isActive: false), Dot(isActive: true)]),
             const SizedBox(height: 40),
-            MyCustomButtom(
-              text: 'Get started',
-              onpressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const LoginPage()),
-                );
-              },
+            SizedBox(
+              width: 150,
+              child: MyCustomButtom(
+                text: 'Get started',
+                onpressed: () {
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const LoginPage(),
+                      fullscreenDialog: true,
+                    ),
+                    (Route<dynamic> route) => false,
+                  );
+                },
+              ),
             ),
           ],
         ),

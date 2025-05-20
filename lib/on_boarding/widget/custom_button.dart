@@ -12,16 +12,20 @@ class MyCustomButtom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
+    return ElevatedButton(
       onPressed: onpressed,
-      color: const Color(0xff787b82),
-      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+
+      style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        maximumSize: const Size(double.infinity, 50),
+        backgroundColor: const Color(0xfffecb10),
+      ),
+
       child: Text(
         text,
         style: const TextStyle(
-          color: Color(0xfffecb10),
+          color: Color.fromARGB(255, 0, 0, 0),
           fontSize: 18,
-          backgroundColor: const Color(0xff787b82),
         ),
       ),
     );

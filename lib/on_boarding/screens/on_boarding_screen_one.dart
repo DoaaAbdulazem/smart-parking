@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_project/auth/screen/login.dart';
 import 'package:my_project/on_boarding/screens/on_boarding_screen_two.dart';
-import 'package:my_project/on_boarding/widget/custombuttom.dart';
+import 'package:my_project/on_boarding/widget/custom_button.dart';
 import 'package:my_project/on_boarding/widget/dot.dart';
 import 'package:my_project/on_boarding/widget/dots.dart';
 import 'package:my_project/on_boarding/widget/on_boarding_title.dart';
@@ -21,8 +21,8 @@ class OnBordingneScreenOne extends StatelessWidget {
             OneBoardingImage(imagePath: 'assets/images/photo1.jpg'),
 
             OnBoardingTitle(
-              title:
-                  "Welcome to smart parking \n Enjoy your trip your car is safe",
+              title: "Welcome to smart parking ",
+              subtitle: "Enjoy your trip your car is safe",
             ),
             SizedBox(height: 30),
             Dots(list: [Dot(isActive: true), Dot(isActive: false)]),
@@ -31,27 +31,33 @@ class OnBordingneScreenOne extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                MyCustomButtom(
-                  text: 'skip',
-                  onpressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const LoginPage(),
-                      ),
-                    );
-                  },
+                SizedBox(
+                  width: 150,
+                  child: MyCustomButtom(
+                    text: 'skip',
+                    onpressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const LoginPage(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
-                MyCustomButtom(
-                  text: "Next",
-                  onpressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => const OneBoardingScreenTwo(),
-                      ),
-                    );
-                  },
+                SizedBox(
+                  width: 150,
+                  child: MyCustomButtom(
+                    text: "Next",
+                    onpressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const OneBoardingScreenTwo(),
+                        ),
+                      );
+                    },
+                  ),
                 ),
               ],
             ),

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/auth/screen/signup.dart';
+
+import 'package:my_project/auth/widget/app_bar_loginscreen.dart';
+import 'package:my_project/auth/widget/forget_password.dart';
 import 'package:my_project/auth/widget/input_field.dart';
-import 'package:my_project/on_boarding/widget/custombuttom.dart';
+import 'package:my_project/auth/widget/login_botton.dart';
+import 'package:my_project/auth/widget/sign_up_bottom.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
@@ -10,69 +13,49 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController passwordController = TextEditingController();
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          "Login",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+      backgroundColor: Color(0xff4c4f54),
+      appBar: CustomAppBar(),
+      body: Container(
+        margin: const EdgeInsets.only(top: 50),
+
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+            topLeft: Radius.circular(50),
+            topRight: Radius.circular(50),
+          ),
         ),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
         child: Column(
+          spacing: 25,
           children: [
             SizedBox(height: 100),
 
-            inputfield(
+            InputField(
               labeltext: "Email",
               hinttext: "Email or phone",
               prefixicon: const Icon(Icons.email),
             ),
 
-            inputfield(
+            InputField(
               labeltext: "Password",
               hinttext: "Enter your password",
               prefixicon: const Icon(Icons.lock),
               controller: passwordController,
             ),
 
-            TextButton(
-              onPressed: () {},
-              child: Text(
-                "forget password?",
-                style: TextStyle(
-                  color: const Color.fromARGB(255, 48, 170, 226),
-                ),
-              ),
-            ),
+            ForgetPassword(),
             SizedBox(height: 30),
             SizedBox(
               width: double.infinity,
               height: 50,
 
-              child: MyCustomButtom(
-                text: "Login",
-                onpressed: () {
-                  print(passwordController.text);
-                },
-              ),
+              child: LoginButton(passwordController: passwordController),
             ),
 
-            SizedBox(height: 200),
+            SizedBox(height: 20),
 
-            SizedBox(
-              width: double.infinity,
-              height: 50,
-              child: MyCustomButtom(
-                text: "Sign up",
-                onpressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => const Signup()),
-                  );
-                },
-              ),
-            ),
+            SignUpBottom(),
           ],
         ),
       ),
