@@ -19,12 +19,9 @@ class InputField extends StatelessWidget {
     return TextField(
       controller: controller,
       decoration: InputDecoration(
-        fillColor: Color.fromARGB(202, 235, 232, 232),
-        filled: true,
         labelText: labeltext,
         hintText: hinttext,
         prefixIcon: prefixicon,
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
       ),
     );
   }

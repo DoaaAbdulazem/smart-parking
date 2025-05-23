@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/on_boarding/widget/custom_button.dart';
+import 'package:my_project/core/consts/strings.dart';
+import 'package:my_project/features/on_boarding/widget/custom_button.dart';
 
 class LoginButton extends StatelessWidget {
   const LoginButton({super.key, required this.passwordController});
@@ -9,7 +10,7 @@ class LoginButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MyCustomButtom(
-      text: "Login",
+      text: Strings.login,
       onpressed: () {
         print(passwordController.text);
       },

@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/auth/screen/login.dart';
-import 'package:my_project/on_boarding/screens/on_boarding_screen_two.dart';
-import 'package:my_project/on_boarding/widget/custom_button.dart';
-import 'package:my_project/on_boarding/widget/dot.dart';
-import 'package:my_project/on_boarding/widget/dots.dart';
-import 'package:my_project/on_boarding/widget/on_boarding_title.dart';
-import 'package:my_project/on_boarding/widget/on_boarding_image.dart';
+import 'package:my_project/core/consts/assets.dart';
+import 'package:my_project/core/consts/strings.dart';
+import 'package:my_project/features/auth/screen/login.dart';
+import 'package:my_project/features/on_boarding/screens/on_boarding_screen_two.dart';
+import 'package:my_project/features/on_boarding/widget/custom_button.dart';
+import 'package:my_project/features/on_boarding/widget/dot.dart';
+import 'package:my_project/features/on_boarding/widget/dots.dart';
+import 'package:my_project/features/on_boarding/widget/on_boarding_title.dart';
+import 'package:my_project/features/on_boarding/widget/on_boarding_image.dart';
 
 class OnBordingneScreenOne extends StatelessWidget {
   const OnBordingneScreenOne({super.key});
@@ -18,11 +20,11 @@ class OnBordingneScreenOne extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(height: 30),
-            OneBoardingImage(imagePath: 'assets/images/photo1.jpg'),
+            OneBoardingImage(imagePath: Assets.onBordingOneImage),
 
             OnBoardingTitle(
-              title: "Welcome to smart parking ",
-              subtitle: "Enjoy your trip your car is safe",
+              title: Strings.welcomePageOne,
+              subtitle: Strings.welcomePageOneSecond,
             ),
             SizedBox(height: 30),
             Dots(list: [Dot(isActive: true), Dot(isActive: false)]),
@@ -34,7 +36,7 @@ class OnBordingneScreenOne extends StatelessWidget {
                 SizedBox(
                   width: 150,
                   child: MyCustomButtom(
-                    text: 'skip',
+                    text: Strings.skipBotton,
                     onpressed: () {
                       Navigator.push(
                         context,
@@ -48,7 +50,7 @@ class OnBordingneScreenOne extends StatelessWidget {
                 SizedBox(
                   width: 150,
                   child: MyCustomButtom(
-                    text: "Next",
+                    text: Strings.nextBotton,
                     onpressed: () {
                       Navigator.push(
                         context,

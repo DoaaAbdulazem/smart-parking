@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/auth/widget/appbar_signup.dart';
-import 'package:my_project/auth/widget/input_field.dart';
-import 'package:my_project/auth/widget/signup_botton.dart';
+import 'package:my_project/core/consts/strings.dart';
+import 'package:my_project/features/auth/widget/appbar_signup.dart';
+import 'package:my_project/features/auth/widget/input_field.dart';
+import 'package:my_project/features/auth/widget/signup_botton.dart';
 
 class SignUp extends StatelessWidget {
   const SignUp({super.key});
@@ -29,38 +30,38 @@ class SignUp extends StatelessWidget {
             children: [
               const SizedBox(height: 30),
               InputField(
-                labeltext: "First Name",
-                hinttext: "First Name",
+                labeltext: Strings.labelTextFirstName,
+                hinttext: Strings.hintTextFistName,
                 prefixicon: Icon(Icons.person),
               ),
               InputField(
-                labeltext: "Last Name",
-                hinttext: "Last name",
+                labeltext: Strings.labelTextLastName,
+                hinttext: Strings.hintTextLastName,
                 prefixicon: Icon(Icons.perm_identity),
               ),
               InputField(
-                labeltext: "Phone",
-                hinttext: "Phone",
+                labeltext: Strings.labelTextPhone,
+                hinttext: Strings.hintTextphone,
                 prefixicon: Icon(Icons.call),
               ),
               InputField(
-                labeltext: "Email",
-                hinttext: "Email",
+                labeltext: Strings.labelTextEmailsSignUp,
+                hinttext: Strings.hintTextEmailSignUp,
                 prefixicon: Icon(Icons.email_outlined),
               ),
               InputField(
-                labeltext: "Password",
-                hinttext: "Password",
+                labeltext: Strings.labelTextPassword,
+                hinttext: Strings.hintTextEmailSignUp,
                 prefixicon: Icon(Icons.lock),
               ),
               InputField(
-                labeltext: "City",
-                hinttext: "City",
+                labeltext: Strings.labelTextCity,
+                hinttext: Strings.hintTextCity,
                 prefixicon: Icon(Icons.location_on),
               ),
               InputField(
-                labeltext: "Payment method",
-                hinttext: "payment method",
+                labeltext: Strings.labelTextPaymentMethod,
+                hinttext: Strings.hintTextPaymentMethod,
                 prefixicon: Icon(Icons.payment),
               ),
 

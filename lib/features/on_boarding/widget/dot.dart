@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/core/theme/app_colors.dart';
 
 class Dot extends StatelessWidget {
   const Dot({super.key, required this.isActive});
@@ -12,8 +13,7 @@ class Dot extends StatelessWidget {
       height: isActive ? 20 : 15,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color:
-            isActive ? Color(0xff787b82) : Color.fromARGB(255, 225, 225, 227),
+        color: isActive ? AppColors.dotColor : AppColors.bkgColor,
       ),
     );
   }
