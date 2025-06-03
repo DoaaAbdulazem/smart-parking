@@ -8,7 +8,7 @@ class Strings {
   static const String getStartedBotton = 'Get started';
   static const String login = "Login";
   static const String appBarSignUpScreen = "Sign up";
-  static const String signUp = "Dont have an account?Sign up";
+  static const String signUpAccount = "Dont have an account?Sign up";
   static const String forgetPassword = "ForgetPassword?";
   //////////////////////////////////////////////
   static const String labelTextEmail = "Email";

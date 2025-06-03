@@ -12,4 +12,7 @@ class AppTextStyle {
     fontWeight: FontWeight.w500,
     color: Colors.black,
   );
+
+  static const ForgetPassword = TextStyle(color: Colors.black, fontSize: 17);
+  static const signUpAccount = TextStyle(color: AppColors.black, fontSize: 18);
 }

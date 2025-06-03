@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_project/core/consts/strings.dart';
-import 'package:my_project/home/screen/home_screen.dart';
+import 'package:my_project/features/home/screen/home_screen.dart';
 import 'package:my_project/features/on_boarding/widget/custom_button.dart';
 
 class SignupBotton extends StatelessWidget {
@@ -16,7 +16,7 @@ class SignupBotton extends StatelessWidget {
         onpressed: () {
           Navigator.pushAndRemoveUntil(
             context,
-            MaterialPageRoute(builder: (context) => const HomeScreen()),
+            MaterialPageRoute(builder: (context) => HomeScreen()),
             (Route<dynamic> route) => false,
           );
         },

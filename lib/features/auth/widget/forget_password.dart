@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/core/consts/strings.dart';
 
 class ForgetPassword extends StatelessWidget {
   const ForgetPassword({super.key});
@@ -7,13 +8,7 @@ class ForgetPassword extends StatelessWidget {
   Widget build(BuildContext context) {
     return Align(
       alignment: Alignment.centerLeft,
-      child: TextButton(
-        onPressed: () {},
-        child: Text(
-          "ForgetPassword?",
-          style: TextStyle(color: Colors.black, fontSize: 17),
-        ),
-      ),
+      child: TextButton(onPressed: () {}, child: Text(Strings.forgetPassword)),
     );
   }
 }

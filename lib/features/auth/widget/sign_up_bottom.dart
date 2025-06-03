@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/core/consts/strings.dart';
 import 'package:my_project/core/theme/app_colors.dart';
 import 'package:my_project/features/auth/screen/signup.dart';
 
@@ -17,7 +18,7 @@ class SignUpBottom extends StatelessWidget {
           );
         },
         child: const Text(
-          "Dont have an account?Sign up",
+          Strings.signUpAccount,
           style: TextStyle(color: AppColors.black, fontSize: 18),
         ),
       ),

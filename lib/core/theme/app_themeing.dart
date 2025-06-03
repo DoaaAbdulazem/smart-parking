@@ -6,14 +6,14 @@ class AppThemeing {
   static ThemeData lightTheme = ThemeData(
     brightness: Brightness.light,
     scaffoldBackgroundColor: AppColors.white,
-    // هون للاب بار
+    ////////// هون للاب بار
     appBarTheme: AppBarTheme(
       backgroundColor: AppColors.bkgColor,
       centerTitle: true,
       foregroundColor: AppColors.white,
       titleTextStyle: AppTextStyle.appBarTextStyle,
     ),
-    //هون للزر
+    /////////هون للزر
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.yallowColor,
