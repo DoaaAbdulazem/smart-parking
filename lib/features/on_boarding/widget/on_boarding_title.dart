@@ -6,6 +6,7 @@ class OnBoardingTitle extends StatelessWidget {
     required this.title,
     required this.subtitle,
   });
+
   final String title;
   final String subtitle;
 
@@ -15,7 +16,7 @@ class OnBoardingTitle extends StatelessWidget {
       TextSpan(
         text: title,
         style: TextStyle(
-          color: Color.fromARGB(255, 0, 0, 0),
+          color: Colors.black,
           fontSize: 30,
           fontWeight: FontWeight.bold,
         ),
@@ -30,7 +31,6 @@ class OnBoardingTitle extends StatelessWidget {
           ),
         ],
       ),
-
       textAlign: TextAlign.center,
     );
   }

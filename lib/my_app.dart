@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: AppThemeing.lightTheme,
       debugShowCheckedModeBanner: false,
-      home: OnBordingneScreenOne(),
+      home: OnBordingScreen(),
     );
   }
 }

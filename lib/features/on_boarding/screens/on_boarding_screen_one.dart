@@ -1,67 +1,58 @@
 import 'package:flutter/material.dart';
 import 'package:my_project/core/consts/assets.dart';
 import 'package:my_project/core/consts/strings.dart';
-import 'package:my_project/features/auth/screen/login.dart';
-import 'package:my_project/features/on_boarding/screens/on_boarding_screen_two.dart';
+import 'package:my_project/features/on_boarding/model/onboarding_model.dart';
 import 'package:my_project/features/on_boarding/widget/custom_button.dart';
-import 'package:my_project/features/on_boarding/widget/dot.dart';
-import 'package:my_project/features/on_boarding/widget/dots.dart';
-import 'package:my_project/features/on_boarding/widget/on_boarding_title.dart';
-import 'package:my_project/features/on_boarding/widget/on_boarding_image.dart';
 
-class OnBordingneScreenOne extends StatelessWidget {
-  const OnBordingneScreenOne({super.key});
+import 'package:my_project/features/on_boarding/widget/dot.dart';
+import 'package:my_project/features/on_boarding/widget/on_boarding_image.dart';
+import 'package:my_project/features/on_boarding/widget/on_boarding_title.dart';
+
+class OnBordingScreen extends StatefulWidget {
+  const OnBordingScreen({super.key});
+
+  @override
+  State<OnBordingScreen> createState() => _OnBordingScreenState();
+}
+
+class _OnBordingScreenState extends State<OnBordingScreen> {
+  int _currentPage = 0;
+
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Scaffold(
-        body: Column(
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const SizedBox(height: 30),
-            OneBoardingImage(imagePath: Assets.onBordingOneImage),
+            Expanded(
+              child: PageView.builder(
+                onPageChanged: (index) {
+                  setState(() {
+                    _currentPage = index;
+                  });
+                },
+                itemBuilder:
+                    (context, index) =>
+                        OnBordingBody(onBoardingModel: onBordingList[index]),
 
-            OnBoardingTitle(
-              title: Strings.welcomePageOne,
-              subtitle: Strings.welcomePageOneSecond,
+                itemCount: onBordingList.length,
+              ),
             ),
-            SizedBox(height: 30),
-            Dots(list: [Dot(isActive: true), Dot(isActive: false)]),
 
-            const SizedBox(height: 50),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
-                  width: 150,
-                  child: MyCustomButtom(
-                    text: Strings.skipBotton,
-                    onpressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const LoginPage(),
-                        ),
-                      );
-                    },
-                  ),
-                ),
-                SizedBox(
-                  width: 150,
-                  child: MyCustomButtom(
-                    text: Strings.nextBotton,
-                    onpressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const OneBoardingScreenTwo(),
-                        ),
-                      );
-                    },
-                  ),
-                ),
+                Dot(isActive: _currentPage == 0),
+                SizedBox(width: 8),
+                Dot(isActive: _currentPage == 1),
               ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [],
             ),
           ],
         ),
@@ -69,3 +60,40 @@ class OnBordingneScreenOne extends StatelessWidget {
     );
   }
 }
+
+class OnBordingBody extends StatelessWidget {
+  final OnBoardingModel onBoardingModel;
+
+  const OnBordingBody({super.key, required this.onBoardingModel});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        OneBoardingImage(imagePath: onBoardingModel.image),
+        OnBoardingTitle(
+          title: onBoardingModel.title,
+          subtitle: onBoardingModel.description,
+        ),
+      ],
+    );
+  }
+}
+
+///////////////////////////////////////////////////////////////////////////
+OnBoardingModel oneOnBoardingModel = OnBoardingModel(
+  title: Strings.welcomePageOne,
+  description: Strings.welcomePageOneSecond,
+  image: Assets.onBordingOneImage,
+);
+OnBoardingModel twoOnbordingModel = OnBoardingModel(
+  title: Strings.wlecomePagetwo,
+  description: Strings.welcomePageTwoSecond,
+  image: Assets.onBordingTwoImage,
+);
+final List<OnBoardingModel> onBordingList = [
+  oneOnBoardingModel,
+  twoOnbordingModel,
+];

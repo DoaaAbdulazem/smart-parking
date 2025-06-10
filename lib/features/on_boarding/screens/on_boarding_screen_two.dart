@@ -1,3 +1,4 @@
+/*
 import 'package:flutter/material.dart';
 import 'package:my_project/core/consts/assets.dart';
 import 'package:my_project/core/consts/strings.dart';
@@ -49,3 +50,4 @@ class OneBoardingScreenTwo extends StatelessWidget {
     );
   }
 }
+*/
