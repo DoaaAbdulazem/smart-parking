@@ -32,11 +32,9 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(
           children: [
-            // Row للتوضيح مع الريفريش
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // عمود الدوائر والنصوص تحت بعض
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -92,11 +90,11 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 16), // مسافة بين التوضيح والمربعات
+            const SizedBox(height: 16),
 
             Expanded(
               child: GridView.count(
-                crossAxisCount: 2, // صفين فقط
+                crossAxisCount: 2, //صفين
                 crossAxisSpacing: 10,
                 mainAxisSpacing: 10,
                 childAspectRatio: 2,
