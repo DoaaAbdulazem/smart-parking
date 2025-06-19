@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/core/theme/app_colors.dart';
 
 class SearchParking extends StatelessWidget implements PreferredSizeWidget {
   const SearchParking({super.key});
@@ -8,16 +9,13 @@ class SearchParking extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: const Color.fromARGB(255, 213, 213, 213),
+      backgroundColor: AppColors.white,
       title: TextField(
         decoration: InputDecoration(
           hintText: "Search for your parking spot",
-          hintStyle: TextStyle(color: Color.fromARGB(255, 78, 76, 76)),
+          hintStyle: TextStyle(color: AppColors.bkgColor),
           border: InputBorder.none,
-          prefixIcon: Icon(
-            Icons.search,
-            color: const Color.fromARGB(255, 0, 0, 0),
-          ),
+          prefixIcon: Icon(Icons.search, color: Colors.black),
         ),
       ),
     );

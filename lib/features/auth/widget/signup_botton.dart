@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/core/consts/app_size.dart';
 import 'package:my_project/core/consts/strings.dart';
-import 'package:my_project/features/home/screen/home_screen.dart';
+import 'package:my_project/features/auth/screen/free_parking.dart';
+
 import 'package:my_project/features/on_boarding/widget/custom_button.dart';
 
 class SignupBotton extends StatelessWidget {
@@ -9,7 +11,7 @@ class SignupBotton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 35,
+      height: AppSize.spaceForSignUpBotton,
       width: double.infinity,
       child: MyCustomButtom(
         text: Strings.appBarSignUpScreen,
